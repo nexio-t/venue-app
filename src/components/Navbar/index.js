@@ -1,0 +1,24 @@
+import React from "react";
+import "bulma/css/bulma.css";
+
+function Navbar() {
+  return (
+
+    <html class="has-navbar-fixed-top">
+    <nav className="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="navbar-start">
+          <a className="navbar-item" href="/">
+            Venuely: Find your next place <span className="sr-only"></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    </html>
+
+
+  );
+}
+
+export default Navbar;
