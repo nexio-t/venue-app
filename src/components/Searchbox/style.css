@@ -1,0 +1,13 @@
+input {
+    width: 60% !important;
+}
+
+.parentDiv {
+    font-family: monospace;
+    font-size: 4em;
+    margin-top: 30px;
+}
+
+.button {
+    margin-bottom: 20px;
+}
