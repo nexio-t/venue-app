@@ -28,14 +28,38 @@ class HomePage extends Component {
       });
   };
 
+
+
+
+  
+
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("HomePage handleFormSubmit");
-    // API Place Search 
 
     API.getVenue(this.state.userSearch)
     .then(res => {
-      console.log(res);
+      console.log(res.data.candidates[0]);
+
+      let address = res.data.candidates[0].formatted_address; 
+      let name = res.data.candidates[0].name; 
+      let openNow = res.data.candidates[0].opening_hours.open_now; 
+      let locationLat = res.data.candidates[0].geometry.location.lat; 
+      let locationLong = res.data.candidates[0].geometry.location.lng; 
+      let photoReference = res.data.candidates[0].photos[0].photo_reference; 
+      let place_id = res.data.candidates[0].place_id; 
+
+      console.log(address); 
+      console.log(name); 
+      console.log(openNow); 
+      console.log(locationLat); 
+      console.log(locationLong); 
+      console.log(photoReference); 
+      console.log(place_id); 
+
+      // make a seperate API call to the photos API
+
+      // (1) capture relevant information 
+      // (2) display relevant information 
     })
     .catch(err => console.log(err));
 
