@@ -9,7 +9,7 @@ export default {
 
       // Proxy adds Access-Control-Allow-Origin header to the response 
       return axios.get(url + googleUrl); 
-    },
+    }
 
   };
   
