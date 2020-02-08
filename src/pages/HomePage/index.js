@@ -11,17 +11,13 @@ class HomePage extends Component {
 
   // Test API Call
   testAPICall = () => {
-    API.getVenue()
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => console.err(err));
+   
   };
 
   handleInputChange = event => {
 
-    console.log("HomePage handleInputChange event.target: ", event.target);
-    console.log("HomePage handleInputChange event.target.value: ", event.target.value);
+    // console.log("HomePage handleInputChange event.target: ", event.target);
+    // console.log("HomePage handleInputChange event.target.value: ", event.target.value);
 
     let value = event.target.value; 
     let name = event.target.name; 
@@ -35,7 +31,17 @@ class HomePage extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("HomePage handleFormSubmit");
-    // API call to go here
+    // API Place Search 
+
+    API.getVenue(this.state.userSearch)
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => console.log(err));
+
+    // API Place Details 
+
+        // populate card with that information 
   };
 
   render() {
@@ -47,9 +53,6 @@ class HomePage extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.userSearch}
         />
-        <div>
-          <h1>Home Page</h1>
-        </div>
       </Container>
     );
   }
