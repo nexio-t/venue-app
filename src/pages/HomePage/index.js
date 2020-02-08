@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Container from "../../components/Container";
 import Searchbox from "../../components/Searchbox";
 import API from "../../utils/API";
+import VenueCard from "../../components/VenueCard";
 
 class HomePage extends Component {
 
@@ -9,15 +10,7 @@ class HomePage extends Component {
       userSearch: ""
   }
 
-  // Test API Call
-  testAPICall = () => {
-   
-  };
-
   handleInputChange = event => {
-
-    // console.log("HomePage handleInputChange event.target: ", event.target);
-    // console.log("HomePage handleInputChange event.target.value: ", event.target.value);
 
     let value = event.target.value; 
     let name = event.target.name; 
@@ -28,11 +21,6 @@ class HomePage extends Component {
       });
   };
 
-
-
-
-  
-
   handleFormSubmit = event => {
     event.preventDefault();
 
@@ -40,34 +28,41 @@ class HomePage extends Component {
     .then(res => {
       console.log(res.data.candidates[0]);
 
-      let address = res.data.candidates[0].formatted_address; 
-      let name = res.data.candidates[0].name; 
-      let openNow = res.data.candidates[0].opening_hours.open_now; 
-      let locationLat = res.data.candidates[0].geometry.location.lat; 
-      let locationLong = res.data.candidates[0].geometry.location.lng; 
-      let photoReference = res.data.candidates[0].photos[0].photo_reference; 
-      let place_id = res.data.candidates[0].place_id; 
+      let address, name, openNow, locationLat, locationLong, photoReference, place_id; 
 
-      console.log(address); 
-      console.log(name); 
-      console.log(openNow); 
-      console.log(locationLat); 
-      console.log(locationLong); 
-      console.log(photoReference); 
-      console.log(place_id); 
+      address = res.data.candidates[0].formatted_address; 
+      name = res.data.candidates[0].name; 
+      openNow = res.data.candidates[0].opening_hours.open_now; 
+      locationLat = res.data.candidates[0].geometry.location.lat; 
+      locationLong = res.data.candidates[0].geometry.location.lng; 
+      photoReference = res.data.candidates[0].photos[0].photo_reference; 
+      place_id = res.data.candidates[0].place_id; 
 
-      // make a seperate API call to the photos API
-
-      // (1) capture relevant information 
-      // (2) display relevant information 
+      console.log("Address: ", address); 
+      console.log("Name: ", name); 
+      console.log("Open now:", openNow); 
+      console.log("latitude: ", locationLat); 
+      console.log("longitude: ", locationLong); 
+      console.log("photo Reference: ", photoReference); 
+      console.log("place_id: ", place_id); 
+     
+      this.getVenueDetails(place_id); 
+    
     })
     .catch(err => console.log(err));
 
-    // API Place Details 
-
-        // populate card with that information 
   };
 
+  getVenueDetails = placeId => {
+
+    API.getVenueDetails(placeId)
+    .then(res => {
+        console.log("Venue Details: ", res); 
+    })
+    .catch(err => console.log(err)); 
+
+  }
+  
   render() {
     console.log(this.state); 
     return (
@@ -77,6 +72,7 @@ class HomePage extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.userSearch}
         />
+        <VenueCard/>
       </Container>
     );
   }

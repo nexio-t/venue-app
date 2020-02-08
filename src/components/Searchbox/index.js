@@ -27,6 +27,8 @@ const Searchbox = props => {
                     Search
         </button>
             </form>
+
+            
         </div>
     );
 };
