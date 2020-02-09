@@ -1,6 +1,7 @@
 img .venueImage {
     max-width: 100%; 
-    width: auto
+    width: auto; 
+    /* max-height: 100px;  */
 }
 
 .review-card {

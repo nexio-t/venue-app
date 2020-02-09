@@ -32,7 +32,7 @@ class VenueCard extends Component {
             <div className="column is-4 modal-button" data-target="modal-card">
               <div className="card is-shady">
                 <div className="card-image ">
-                  <figure className="image is-4by3">
+                  <figure className="image">
                     <img
                       className="venueImage"
                       src={this.props.venueImg}
@@ -44,7 +44,7 @@ class VenueCard extends Component {
                 <div className="card-content">
                   <div className="media">
                     <div className="media-left">
-                      <figure className="image is-32x32">
+                      <figure className="image is-24x24">
                         <img src={this.props.icon} alt="Placeholder image" />
                       </figure>
                     </div>
@@ -57,12 +57,12 @@ class VenueCard extends Component {
                     <p>Average Rating: {this.props.rating}</p>
 
                     {this.props.website ? <a type="button" className="button is-primary" href={this.props.website} > Website </a> : null}
-                    
+
                     <span
                       onClick={this.setModalActive}
                       className="button is-link modal-button"
                     >
-                      {" "}
+                  
                       Reviews
                     </span>
                   </div>
