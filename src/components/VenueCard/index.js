@@ -24,8 +24,11 @@ class VenueCard extends Component {
 
   render() {
     console.log(this.state);
+  
     return (
       <div>
+
+        {this.props.address ? (     <div>
         {/* {console.log("Props Line 19:", props)}    */}
         <section className="container">
           <div className="columns features">
@@ -136,6 +139,10 @@ class VenueCard extends Component {
         </div>
         {/* Modal End */}
       </div>
+        ) : (<div>Nothing to Display</div>)}
+
+      </div>
+
     );
   }
 }
