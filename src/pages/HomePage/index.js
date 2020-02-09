@@ -34,12 +34,11 @@ class HomePage extends Component {
       [name]: value,
       userTyping: true
     });
-
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.setState({userTyping: false}); 
+    this.setState({ userTyping: false });
 
     // Call to Google Maps Places to fetch general venue information and place id to make another call for more detailed information
     API.getVenue(this.state.userSearch)
@@ -60,7 +59,10 @@ class HomePage extends Component {
         locationLong = res.data.candidates[0].geometry.location.lng;
         photoReference = res.data.candidates[0].photos[0].photo_reference;
         place_id = res.data.candidates[0].place_id;
-        venueImg = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+ photoReference +"&key=AIzaSyCPlDKSVJg9tHRPI5NLhyUO-MttxqsiTgo"
+        venueImg =
+          "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" +
+          photoReference +
+          "&key=AIzaSyCPlDKSVJg9tHRPI5NLhyUO-MttxqsiTgo";
 
         //   console.log("Address: ", address);
         //   console.log("Name: ", name);
