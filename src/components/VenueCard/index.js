@@ -5,8 +5,8 @@ import "bulma/css/bulma.css";
 const VenueCard = props => {
 
   return (
-    <div>
-                  {console.log(props)};  
+    <div>  
+      {console.log("Props Line 19:", props)}   
       <section className="container">
         <div className="columns features">
           <div className="column is-4 modal-button" data-target="modal-card">
@@ -14,8 +14,9 @@ const VenueCard = props => {
               <div className="card-image ">
                 <figure className="image is-4by3">
                   <img
-                    src="https://bulma.io/images/placeholders/96x96.png"
-                    alt="Placeholder image"
+                    className="venueImage"
+                    src={props.venueImg}
+                    alt={props.name}
                   />
                 </figure>
               </div>
@@ -24,22 +25,21 @@ const VenueCard = props => {
                   <div className="media-left">
                     <figure className="image is-48x48">
                       <img
-                        src="https://bulma.io/images/placeholders/96x96.png"
+                        src={props.icon}
                         alt="Placeholder image"
                       />
                     </figure>
                   </div>
                   <div className="media-content">
-                    <p className="title is-4">Venue Title</p>
+                    <p className="title is-4">{props.name}</p>
                   </div>
                 </div>
                 <div className="content">
-                  <p>Address</p>
-                  <p>Open Now</p>
-                  <p>Average Rating</p>
+                  <p>Address: {props.address}</p>
+                  <p>Average Rating: {props.rating}</p>
                   <span className="button is-link modal-button">
                     {" "}
-                    more info....
+                    More Information
                   </span>
                 </div>
               </div>

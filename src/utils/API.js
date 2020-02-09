@@ -17,7 +17,7 @@ export default {
     getVenueDetails: function(query) {
 
         const url = "https://cors-anywhere.herokuapp.com/"; 
-        const googleUrl = "https://maps.googleapis.com/maps/api/place/details/json?place_id=" + query + "&fields=name,opening_hours,website,price_level,review,user_ratings_total,icon,types,url,vicinity,rating,formatted_phone_number&key=AIzaSyCPlDKSVJg9tHRPI5NLhyUO-MttxqsiTgo"
+        const googleUrl = "https://maps.googleapis.com/maps/api/place/details/json?place_id=" + query + "&fields=name,opening_hours,website,price_level,review,user_ratings_total,icon,types,photo,url,vicinity,rating,formatted_phone_number&key=AIzaSyCPlDKSVJg9tHRPI5NLhyUO-MttxqsiTgo"
 
         return axios.get(url + googleUrl); 
     }

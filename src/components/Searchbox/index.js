@@ -5,7 +5,7 @@ import "bulma/css/bulma.css";
 const Searchbox = props => {
     return (
         <div>
-            {console.log(props)};  
+            {/* {console.log(props)};   */}
             <div className="parentDiv">Find a place</div>
             <form>
                 <div className="field">
