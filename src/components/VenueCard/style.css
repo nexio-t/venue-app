@@ -2,3 +2,7 @@ img .venueImage {
     max-width: 100%; 
     width: auto
 }
+
+.review-card {
+    margin: 15px; 
+}
