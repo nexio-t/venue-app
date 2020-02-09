@@ -43,20 +43,20 @@ class VenueCard extends Component {
                 </div>
                 <div className="card-content">
                   <div className="media">
-                    <div className="media-left">
+                    {/* <div className="media-left">
                       <figure className="image is-24x24">
                         <img src={this.props.icon} alt="Placeholder image" />
                       </figure>
-                    </div>
+                    </div> */}
                     <div className="media-content">
-                      <p className="title is-4">{this.props.name}</p>
+                      <p className="title is-4 has-text-centered">{this.props.name}</p>
                     </div>
                   </div>
                   <div className="content">
                     <p>Address: {this.props.address}</p>
                     <p>Average Rating: {this.props.rating}</p>
 
-                    {this.props.website ? <a type="button" className="button is-primary" href={this.props.website} > Website </a> : null}
+                    {this.props.website ? <a type="button" className="button is-primary websiteBtn" href={this.props.website} > Website </a> : null}
 
                     <span
                       onClick={this.setModalActive}
@@ -88,13 +88,13 @@ class VenueCard extends Component {
             <section className="modal-card-body">
           
               {console.log(typeof this.props.reviews)}
-              {Array.from(this.props.reviews).map(item => {
+              {Array.from(this.props.reviews).map( (item, index) => {
                 return (
-                  <div className="card review-card">
+                  <div key={index} className="card review-card">
                     <div className="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-64x64">
+                      <div className="media">
+                        <div className="media-left">
+                          <figure className="image is-64x64">
                             <img
                               className="profileImg"
                               src={item.profile_photo_url}
@@ -103,19 +103,19 @@ class VenueCard extends Component {
                             />
                           </figure>
                         </div>
-                        <div class="media-content">
-                          <p class="title is-4">{item.author_name}</p>
-                          <p class="subtitle is-6">Rating: {item.rating}</p>
+                        <div className="media-content">
+                          <p className="title is-4">{item.author_name}</p>
+                          <p className="subtitle is-6">Rating: {item.rating}</p>
                         </div>
                       </div>
 
-                      <div class="content has-text-left">
+                      <div className="content has-text-left">
                       {item.text}
                         <br />
                       </div>
 
-                      <div class="has-text-center has-text-weight-light">
-                      <p class="subtitle is-6 has-text-center">{item.relative_time_description}</p>
+                      <div className="has-text-center has-text-weight-light">
+                      <p className="subtitle is-6 has-text-center">{item.relative_time_description}</p>
                       </div>
                         
                     </div>
