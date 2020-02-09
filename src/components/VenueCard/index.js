@@ -37,13 +37,14 @@ class VenueCard extends Component {
                       className="venueImage"
                       src={this.props.venueImg}
                       alt={this.props.name}
+                      onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/300"}}
                     />
                   </figure>
                 </div>
                 <div className="card-content">
                   <div className="media">
                     <div className="media-left">
-                      <figure className="image is-48x48">
+                      <figure className="image is-32x32">
                         <img src={this.props.icon} alt="Placeholder image" />
                       </figure>
                     </div>
@@ -54,6 +55,9 @@ class VenueCard extends Component {
                   <div className="content">
                     <p>Address: {this.props.address}</p>
                     <p>Average Rating: {this.props.rating}</p>
+
+                    {this.props.website ? <a type="button" className="button is-primary" href={this.props.website} > Website </a> : null}
+                    
                     <span
                       onClick={this.setModalActive}
                       className="button is-link modal-button"
@@ -95,6 +99,7 @@ class VenueCard extends Component {
                               className="profileImg"
                               src={item.profile_photo_url}
                               alt={item.author_name}
+                              onError={(e)=>{e.target.onerror = null; e.target.src="https://via.placeholder.com/300"}}
                             />
                           </figure>
                         </div>
