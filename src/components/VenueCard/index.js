@@ -3,8 +3,10 @@ import "./style.css";
 import "bulma/css/bulma.css";
 
 const VenueCard = props => {
+
   return (
     <div>
+                  {console.log(props)};  
       <section className="container">
         <div className="columns features">
           <div className="column is-4 modal-button" data-target="modal-card">
