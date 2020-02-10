@@ -61,8 +61,8 @@ class Map extends Component {
       };
     
       render() {
-        console.log(this.state);
-        console.log("Map Props: ", this.props); 
+        // console.log(this.state);
+        // console.log("Map Props: ", this.props); 
         return (
           <div>
               

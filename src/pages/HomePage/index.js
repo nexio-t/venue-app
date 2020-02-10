@@ -24,6 +24,7 @@ class HomePage extends Component {
     icon: "",
     phone: "",
     venueImg: "",
+    status: "",
     userTyping: false
   };
 
@@ -46,6 +47,18 @@ class HomePage extends Component {
     API.getVenue(this.state.userSearch)
       .then(res => {
         console.log(res.data.candidates[0]);
+        console.log("res is: ", res.data.status);
+
+        this.setState({
+          address: "",
+          name: "",
+          locationLat: "",
+          locationLong: "",
+          photoReference: "",
+          venueImg: "",
+          place_id: "",
+          status: ""
+        });
 
         let address,
           name,
@@ -53,7 +66,8 @@ class HomePage extends Component {
           locationLong,
           photoReference,
           place_id,
-          venueImg;
+          venueImg,
+          status;
 
         address = res.data.candidates[0].formatted_address;
         name = res.data.candidates[0].name;
@@ -65,6 +79,7 @@ class HomePage extends Component {
           "https://maps.googleapis.com/maps/api/place/photo?maxheight=300&photoreference=" +
           photoReference +
           "&key=AIzaSyCPlDKSVJg9tHRPI5NLhyUO-MttxqsiTgo";
+        status = res.data.status;
 
         //   console.log("Address: ", address);
         //   console.log("Name: ", name);
@@ -80,7 +95,8 @@ class HomePage extends Component {
           locationLong,
           photoReference,
           venueImg,
-          place_id
+          place_id,
+          status
         });
 
         this.getVenueDetails(place_id);
@@ -103,7 +119,7 @@ class HomePage extends Component {
         rating = res.data.result.rating;
         icon = res.data.result.icon;
         phone = res.data.result.formatted_phone_number;
-        hours = res.data.result.opening_hours.weekday_text
+        hours = res.data.result.opening_hours.weekday_text;
 
         // console.log("website: ", website);
         // console.log("Google Maps: ", googleMapsUrl);
@@ -136,40 +152,38 @@ class HomePage extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.userSearch}
         />
-        <div className="columns">
+        { (this.state.name) ? (<div className="columns">
           <div className="column">
             <VenueCard
-            address={this.state.address}
-            name={this.state.name}
-            photoReference={this.state.photoReference}
-            website={this.state.website}
-            googleMapsUrl={this.state.googleMapsUrl}
-            hours={this.state.hours}
-            types={this.state.types}
-            reviews={this.state.reviews}
-            rating={this.state.rating}
-            icon={this.state.icon}
-            phone={this.state.phone}
-            userTyping={this.state.userTyping}
-            venueImg={this.state.venueImg}
-          />
-
+              address={this.state.address}
+              name={this.state.name}
+              photoReference={this.state.photoReference}
+              website={this.state.website}
+              googleMapsUrl={this.state.googleMapsUrl}
+              hours={this.state.hours}
+              types={this.state.types}
+              reviews={this.state.reviews}
+              rating={this.state.rating}
+              icon={this.state.icon}
+              phone={this.state.phone}
+              userTyping={this.state.userTyping}
+              venueImg={this.state.venueImg}
+            />
           </div>
           <div className="column is-two-thirds">
-          <Map
-          latitude={this.state.locationLat}
-          longitude={this.state.locationLong}
-          userTyping={this.state.userTyping}
-          address={this.state.address}
-          name={this.state.name}
-          venueImg={this.state.venueImg}
-        />
+            <Map
+              latitude={this.state.locationLat}
+              longitude={this.state.locationLong}
+              userTyping={this.state.userTyping}
+              address={this.state.address}
+              name={this.state.name}
+              venueImg={this.state.venueImg}
+            />
           </div>
+        </div>) : (<div>No search results to display</div>)}
+        
 
-        </div>
 
-      
-       
       </Container>
     );
   }
