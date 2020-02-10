@@ -43,7 +43,7 @@ Urban Outfitters Center City
 <img src="./public/assets/images/venuely-mobile-3.png" width="40%">
 
 
-Check out the video demo [here](https://getbootstrap.com/). 
+Check out the video demo [here](https://drive.google.com/file/d/1V9r5-r1jy3U6y0Nc3O0SJQcty6BgDKBp/view). 
 
 ### This project was built with...
 * HTML5

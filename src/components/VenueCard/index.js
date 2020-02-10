@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
 import "bulma/css/bulma.css";
-import { thisExpression } from "@babel/types";
 
 class VenueCard extends Component {
   state = {
@@ -35,8 +34,6 @@ class VenueCard extends Component {
   }
 
   render() {
-    // console.log(this.state);
-    // console.log("Line 36: ", this.props);
     return (
       <div>
         {this.props.address ? (
@@ -75,19 +72,26 @@ class VenueCard extends Component {
                   <footer className="card-footer">
                     {this.props.website ? (
                       <p className="card-footer-item">
-                        <a href={this.props.website}> <i class="fa fa-mouse-pointer"></i> Website</a>
+                        <a href={this.props.website}>
+                          {" "}
+                          <i className="fa fa-mouse-pointer"></i> Website
+                        </a>
                       </p>
                     ) : null}
 
                     {this.props.reviews ? (
                       <p className="card-footer-item">
-                        <a onClick={this.setModalActive}><i className="fa fa-star"></i> Reviews</a>
+                        <a href="/#" onClick={this.setModalActive}>
+                          <i className="fa fa-star"></i> Reviews
+                        </a>
                       </p>
                     ) : null}
 
                     {this.props.hours ? (
                       <p className="card-footer-item">
-                        <a onClick={this.setHoursModalActive}><i className="fa fa-hourglass-start"></i> Hours</a>
+                        <a href="/#" onClick={this.setHoursModalActive}>
+                          <i className="fa fa-hourglass-start"></i> Hours
+                        </a>
                       </p>
                     ) : null}
                   </footer>
@@ -116,29 +120,24 @@ class VenueCard extends Component {
                   ></button>
                 </header>
                 <section className="modal-card-body">
-                  {console.log("Line 130 Hours: ", typeof this.props.hours)}
                   <div className="columns">
                     <div className="column"></div>
                     <div className="column is-half">
-                    {this.props.hours
-                    ? Array.from(this.props.hours).map((item, index) => {
-                        return (
-                          <div key={index}>
-                            <div className="content has-text-centered">
-                              {item}
-                              <br />
-                            </div>
-                          </div>
-                        );
-                      })
-                    : null}
-
+                      {this.props.hours
+                        ? Array.from(this.props.hours).map((item, index) => {
+                            return (
+                              <div key={index}>
+                                <div className="content has-text-centered">
+                                  {item}
+                                  <br />
+                                </div>
+                              </div>
+                            );
+                          })
+                        : null}
                     </div>
                     <div className="column"></div>
-
                   </div>
-
-                 
                 </section>
                 <footer className="modal-card-foot"></footer>
               </div>
@@ -160,8 +159,6 @@ class VenueCard extends Component {
                   ></button>
                 </header>
                 <section className="modal-card-body">
-                  {console.log(typeof this.props.reviews)}
-
                   {this.props.reviews
                     ? Array.from(this.props.reviews).map((item, index) => {
                         return (
@@ -222,17 +219,13 @@ class VenueCard extends Component {
                   ) : null}
                 </section>
                 <footer className="modal-card-foot">
-                  {/* <button onClick={this.setModalInactive} className="button">
-                Close
-              </button> */}
+                
                 </footer>
               </div>
             </div>
             {/* Reviews Modal End */}
           </div>
-        ) : (
-          null
-        )}
+        ) : null}
       </div>
     );
   }

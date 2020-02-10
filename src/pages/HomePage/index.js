@@ -32,7 +32,7 @@ class HomePage extends Component {
     let value = event.target.value;
     let name = event.target.name;
 
-    // updating the input field's state
+    // Updating the input field's state
     this.setState({
       [name]: value,
       userTyping: true
@@ -43,11 +43,10 @@ class HomePage extends Component {
     event.preventDefault();
     this.setState({ userTyping: false });
 
-    // Call to Google Maps Places to fetch general venue information and place id to make another call for more detailed information
+    // Call to Google Maps Places to fetch  venue information and place id to make another call for more detailed information
     API.getVenue(this.state.userSearch)
       .then(res => {
-        console.log(res.data.candidates[0]);
-        console.log("res is: ", res.data.status);
+
 
         this.setState({
           address: "",
@@ -81,12 +80,7 @@ class HomePage extends Component {
           "&key=AIzaSyCPlDKSVJg9tHRPI5NLhyUO-MttxqsiTgo";
         status = res.data.status;
 
-        //   console.log("Address: ", address);
-        //   console.log("Name: ", name);
-        //   console.log("latitude: ", locationLat);
-        //   console.log("longitude: ", locationLong);
-        //   console.log("photo Reference: ", photoReference);
-        //   console.log("place_id: ", place_id);
+    
 
         this.setState({
           address,
@@ -108,7 +102,7 @@ class HomePage extends Component {
   getVenueDetails = placeId => {
     API.getVenueDetails(placeId)
       .then(res => {
-        console.log("Venue Details: ", res);
+    
 
         let website, googleMapsUrl, types, reviews, rating, icon, phone, hours;
 
@@ -121,13 +115,7 @@ class HomePage extends Component {
         phone = res.data.result.formatted_phone_number;
         hours = res.data.result.opening_hours.weekday_text;
 
-        // console.log("website: ", website);
-        // console.log("Google Maps: ", googleMapsUrl);
-        // console.log("types: ", types);
-        // console.log("reviews: ", reviews);
-        // console.log("rating: ", rating);
-        // console.log("icon: ", icon);
-        // console.log("phone: ", phone);
+
 
         this.setState({
           website,
@@ -144,7 +132,6 @@ class HomePage extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <Container>
         <Searchbox

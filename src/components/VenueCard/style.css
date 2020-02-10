@@ -1,22 +1,3 @@
-
-
-@media only screen and (min-width: 769px) {
-    .image img {
-        display: block;
-        height: auto;
-        width: 100%;
-        max-height: 350px;
-    }
-
-    /* .venueCard {
-        max-width: 300px; 
-    } */
-
-  }
-
-
-
-
 a.websiteBtn.button.is-primary {
     margin: 10px; 
 }
@@ -41,3 +22,15 @@ span.button.is-link.modal-button {
 .card-footer-item {
     font-size: 0.9rem;
 }
+
+@media only screen and (min-width: 769px) {
+    .image img {
+        display: block;
+        height: auto;
+        width: 100%;
+        max-height: 350px;
+    }
+
+  }
+
+
