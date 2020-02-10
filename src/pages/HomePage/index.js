@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Container from "../../components/Container";
 import Searchbox from "../../components/Searchbox";
+import Map from "../../components/Map";
 import API from "../../utils/API";
 import VenueCard from "../../components/VenueCard";
 // import { tsImportEqualsDeclaration } from "@babel/types";
@@ -145,6 +146,11 @@ class HomePage extends Component {
           phone={this.state.phone}
           userTyping={this.state.userTyping}
           venueImg={this.state.venueImg}
+        />
+        <Map
+          latitude={this.state.locationLat}
+          longitude={this.state.locationLong}
+          userTyping={this.state.userTyping}
         />
       </Container>
     );

@@ -61,13 +61,15 @@ class VenueCard extends Component {
 
                     {this.props.website ? <a type="button" className="button is-primary websiteBtn" href={this.props.website} > Website </a> : null}
 
-                    <span
+                    {this.props.reviews ? <span
                       onClick={this.setModalActive}
                       className="button is-link modal-button"
                     >
                   
                       Reviews
-                    </span>
+                    </span> : null}
+
+                    
                   </div>
                 </div>
               </div>
@@ -91,7 +93,8 @@ class VenueCard extends Component {
             <section className="modal-card-body">
           
               {console.log(typeof this.props.reviews)}
-              {Array.from(this.props.reviews).map( (item, index) => {
+               
+              {this.props.reviews ? ( Array.from(this.props.reviews).map( (item, index) => {
                 return (
                   <div key={index} className="card review-card">
                     <div className="card-content">
@@ -124,8 +127,9 @@ class VenueCard extends Component {
                     </div>
                   </div>
                 );
-              })}
+              })) : null }
 
+             
               <p>Contact Information</p>
               <p>{this.props.address}</p>
               <p>{this.props.phone}</p>
