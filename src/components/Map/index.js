@@ -29,13 +29,34 @@ class Map extends Component {
           zoom: 16
         });
 
+        var infoWindow = new window.google.maps.InfoWindow(),
+      marker,
+      i;
+
+     
+
         var marker = new window.google.maps.Marker({
             position: {
               lat: this.props.latitude,
               lng: this.props.longitude
             },
+            icon: "https://img.icons8.com/dusk/64/000000/marker.png",
             map: map
           });
+
+          window.google.maps.event.addListener(
+            marker,
+            "click",
+            ((marker, i) => {
+              return () => {
+    
+                infoWindow.setContent(
+                  "<span style='font-weight:bold;font-size:14px!important;'>" + this.props.name + "<span/>" + "<br/>" + "<p style='font-weight:normal;font-size:12px!important;' >" + this.props.address + "<p/>"
+                );
+                infoWindow.open(map, marker);
+              };
+            })(marker, i)
+          );
 
       };
     

@@ -59,11 +59,11 @@ class VenueCard extends Component {
                     <p>Address: {this.props.address}</p>
                     <p>Average Rating: {this.props.rating}</p>
 
-                    {this.props.website ? <a type="button" className="button is-primary websiteBtn" href={this.props.website} > Website </a> : null}
+                    {this.props.website ? <a type="button" className="button is-small is-primary websiteBtn" href={this.props.website} > Website </a> : null}
 
                     {this.props.reviews ? <span
                       onClick={this.setModalActive}
-                      className="button is-link modal-button"
+                      className="button is-small is-link modal-button"
                     >
                   
                       Reviews

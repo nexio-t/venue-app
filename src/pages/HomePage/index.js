@@ -156,6 +156,9 @@ class HomePage extends Component {
           latitude={this.state.locationLat}
           longitude={this.state.locationLong}
           userTyping={this.state.userTyping}
+          address={this.state.address}
+          name={this.state.name}
+          venueImg={this.state.venueImg}
         />
           </div>
 
