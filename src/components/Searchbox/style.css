@@ -1,5 +1,9 @@
-input {
-    width: 60% !important;
+.parentDiv {
+    margin-top: 80px !important;
+}
+
+div.box {
+    margin-bottom:40px;
 }
 
 .parentDiv {
@@ -8,6 +12,3 @@ input {
     margin-top: 30px;
 }
 
-.button {
-    margin-bottom: 20px;
-}
