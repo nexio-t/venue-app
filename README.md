@@ -33,6 +33,7 @@ Venuely is also completely mobile and tablet-responsive:
 
 Image one 
 ![venuely-mobile-picture1](./public/assets/images/venuely-mobile-1.png)
+<img src="./public/assets/images/venuely-mobile-1.png" width="40%">
 Image two 
 ![venuely-mobile-picture1](./public/assets/images/venuely-mobile-2.png)
 Image two 
@@ -67,7 +68,8 @@ Check out the video demo [here](https://getbootstrap.com/).
 A few areas of further development include: 
 * Displaying an interactive carousel of images using the Google Place Photos API
 * Recommending related venues based on user search 
-* Incorporating redirects to user profiles from reviewers  
+* Dynamically rendering markers based on venue type
+* Incorporating external redirects to user profiles from reviewers  
 
 ## Author
 
