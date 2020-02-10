@@ -31,15 +31,15 @@ Image three
 
 Venuely is also completely mobile and tablet-responsive: 
 
-<kbd>
+<kbd width="40%">
 <img src="./public/assets/images/venuely-mobile-1.png" width="40%">
 </kbd>
  
- <kbd>
+ <kbd width="40%">
 <img src="./public/assets/images/venuely-mobile-2.png" width="40%">
 </kbd>
 
-<kbd>
+<kbd width="40%">
 <img src="./public/assets/images/venuely-mobile-3.png" width="40%">
 </kbd>
 
