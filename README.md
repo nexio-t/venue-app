@@ -31,11 +31,17 @@ Image three
 
 Venuely is also completely mobile and tablet-responsive: 
 
-<img style="border: 1px solid black;" src="./public/assets/images/venuely-mobile-1.png" width="40%">
+<kbd>
+<img src="./public/assets/images/venuely-mobile-1.png" width="40%">
+</kbd>
  
-<img style="border: 1px solid black;" src="./public/assets/images/venuely-mobile-2.png" width="40%">
+ <kbd>
+<img src="./public/assets/images/venuely-mobile-2.png" width="40%">
+</kbd>
 
-<img style="border: 1px solid black;" src="./public/assets/images/venuely-mobile-3.png" width="40%">
+<kbd>
+<img src="./public/assets/images/venuely-mobile-3.png" width="40%">
+</kbd>
 
 Check out the video demo [here](https://getbootstrap.com/). 
 
