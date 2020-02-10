@@ -117,12 +117,14 @@ class VenueCard extends Component {
                 </header>
                 <section className="modal-card-body">
                   {console.log("Line 130 Hours: ", typeof this.props.hours)}
-
-                  {this.props.hours
+                  <div className="columns">
+                    <div className="column"></div>
+                    <div className="column is-half">
+                    {this.props.hours
                     ? Array.from(this.props.hours).map((item, index) => {
                         return (
                           <div key={index}>
-                            <div className="content has-text-left">
+                            <div className="content has-text-centered">
                               {item}
                               <br />
                             </div>
@@ -130,6 +132,13 @@ class VenueCard extends Component {
                         );
                       })
                     : null}
+
+                    </div>
+                    <div className="column"></div>
+
+                  </div>
+
+                 
                 </section>
                 <footer className="modal-card-foot"></footer>
               </div>
