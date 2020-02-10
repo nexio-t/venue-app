@@ -15,6 +15,7 @@ class HomePage extends Component {
     locationLong: "",
     photoReference: "",
     place_id: "",
+    hours: "",
     website: "",
     googleMapsUrl: "",
     types: "",
@@ -93,7 +94,7 @@ class HomePage extends Component {
       .then(res => {
         console.log("Venue Details: ", res);
 
-        let website, googleMapsUrl, types, reviews, rating, icon, phone;
+        let website, googleMapsUrl, types, reviews, rating, icon, phone, hours;
 
         website = res.data.result.website;
         googleMapsUrl = res.data.result.url;
@@ -102,6 +103,7 @@ class HomePage extends Component {
         rating = res.data.result.rating;
         icon = res.data.result.icon;
         phone = res.data.result.formatted_phone_number;
+        hours = res.data.result.opening_hours.weekday_text
 
         // console.log("website: ", website);
         // console.log("Google Maps: ", googleMapsUrl);
@@ -118,7 +120,8 @@ class HomePage extends Component {
           reviews,
           rating,
           icon,
-          phone
+          phone,
+          hours
         });
       })
       .catch(err => console.log(err));
@@ -141,6 +144,7 @@ class HomePage extends Component {
             photoReference={this.state.photoReference}
             website={this.state.website}
             googleMapsUrl={this.state.googleMapsUrl}
+            hours={this.state.hours}
             types={this.state.types}
             reviews={this.state.reviews}
             rating={this.state.rating}

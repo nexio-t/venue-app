@@ -1,7 +1,9 @@
-img .venueImage {
-    max-width: 100%; 
-    width: auto; 
-    /* max-height: 10px !important;  */
+
+.image img {
+    display: block;
+    height: auto;
+    width: 100%;
+    max-height: 300px;
 }
 
 a.websiteBtn.button.is-primary {
