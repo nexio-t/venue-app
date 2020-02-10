@@ -62,7 +62,7 @@ class HomePage extends Component {
         photoReference = res.data.candidates[0].photos[0].photo_reference;
         place_id = res.data.candidates[0].place_id;
         venueImg =
-          "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" +
+          "https://maps.googleapis.com/maps/api/place/photo?maxheight=300&photoreference=" +
           photoReference +
           "&key=AIzaSyCPlDKSVJg9tHRPI5NLhyUO-MttxqsiTgo";
 

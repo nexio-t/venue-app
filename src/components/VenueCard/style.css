@@ -3,7 +3,7 @@
     display: block;
     height: auto;
     width: 100%;
-    max-height: 300px;
+    /* max-height: 300px; */
 }
 
 a.websiteBtn.button.is-primary {
@@ -25,4 +25,8 @@ span.button.is-link.modal-button {
 
 .review-card {
     margin: 15px; 
+}
+
+.card-footer-item {
+    font-size: 0.9rem;
 }

@@ -75,19 +75,19 @@ class VenueCard extends Component {
                   <footer className="card-footer">
                     {this.props.website ? (
                       <p className="card-footer-item">
-                        <a href={this.props.website}>Website</a>
+                        <a href={this.props.website}> <i class="fa fa-mouse-pointer"></i> Website</a>
                       </p>
                     ) : null}
 
                     {this.props.reviews ? (
                       <p className="card-footer-item">
-                        <span onClick={this.setModalActive}>Reviews</span>
+                        <a onClick={this.setModalActive}><i className="fa fa-star"></i> Reviews</a>
                       </p>
                     ) : null}
 
                     {this.props.hours ? (
                       <p className="card-footer-item">
-                        <span onClick={this.setHoursModalActive}>Hours</span>
+                        <a onClick={this.setHoursModalActive}><i className="fa fa-hourglass-start"></i> Hours</a>
                       </p>
                     ) : null}
                   </footer>
