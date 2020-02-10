@@ -1,3 +1,15 @@
-nav {
+
+
+/* nav {
     background: blue !important; 
+}
+
+.navBarTitle {
+    font-family: 'Lobster', cursive ;
+    font-size: 20pt ;
+} */
+
+p.navbarTitle {
+    /* font-family: 'Lobster', cursive ; */
+    font-size: 20pt ;
 }

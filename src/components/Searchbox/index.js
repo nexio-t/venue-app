@@ -6,7 +6,7 @@ const Searchbox = props => {
   return (
     <div>
       {/* {console.log(props)};   */}
-      <div className="parentDiv">Find your place</div>
+      <div className="parentDiv">Venuely: Find your place</div>
       <form>
         
 
