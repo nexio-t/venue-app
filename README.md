@@ -22,26 +22,26 @@ National Constitution Center
 Urban Outfitters Center City 
 ```
 
-Image one 
+#### Image 1: 
 ![venuely-desktop-picture1](./public/assets/images/venuely-phila_museum_pic1.png)
-Image two 
+
+#### Image 2: 
 ![venuely-desktop-picture2](./public/assets/images/venuely-phila_museum_pic2.png)
-Image three 
+
+#### Image 3:
 ![venuely-desktop-picture3](./public/assets/images/venuely-phila_museum_pic3.png)
 
-Venuely is also completely mobile and tablet-responsive: 
+### Venuely is also completely mobile and tablet-responsive: 
 
-<kbd width="40%">
+#### Image 1: 
 <img src="./public/assets/images/venuely-mobile-1.png" width="40%">
-</kbd>
- 
- <kbd width="40%">
-<img src="./public/assets/images/venuely-mobile-2.png" width="40%">
-</kbd>
 
-<kbd width="40%">
+#### Image 2: 
+<img src="./public/assets/images/venuely-mobile-2.png" width="40%">
+
+#### Image 3: 
 <img src="./public/assets/images/venuely-mobile-3.png" width="40%">
-</kbd>
+
 
 Check out the video demo [here](https://getbootstrap.com/). 
 
