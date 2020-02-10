@@ -30,9 +30,9 @@ class VenueCard extends Component {
 
         {this.props.address ? (     <div>
         {/* {console.log("Props Line 19:", props)}    */}
-        <section className="container">
+     
           <div className="columns features">
-            <div className="column is-4 modal-button" data-target="modal-card">
+            <div className="column modal-button" data-target="modal-card">
               <div className="card is-shady">
                 <div className="card-image ">
                   <figure className="image">
@@ -75,7 +75,7 @@ class VenueCard extends Component {
               </div>
             </div>
           </div>
-        </section>
+      
         <footer></footer>
 
         {/* Modal Start  */}
@@ -100,7 +100,7 @@ class VenueCard extends Component {
                     <div className="card-content">
                       <div className="media">
                         <div className="media-left">
-                          <figure className="image is-64x64">
+                          <figure className="image is-48x48">
                             <img
                               className="profileImg"
                               src={item.profile_photo_url}
@@ -111,7 +111,7 @@ class VenueCard extends Component {
                         </div>
                         <div className="media-content">
                           <p className="title is-4">{item.author_name}</p>
-                          <p className="subtitle is-6">Rating: {item.rating}</p>
+                          <p className="subtitle has-text-grey is-6">User rating: {item.rating}</p>
                         </div>
                       </div>
 
@@ -121,7 +121,7 @@ class VenueCard extends Component {
                       </div>
 
                       <div className="has-text-center has-text-weight-light">
-                      <p className="subtitle is-6 has-text-center">{item.relative_time_description}</p>
+                      <p className="subtitle is-6 has-text-center has-text-grey-light">{item.relative_time_description}</p>
                       </div>
                         
                     </div>
@@ -130,9 +130,10 @@ class VenueCard extends Component {
               })) : null }
 
              
-              <p>Contact Information</p>
+              <p className="contact-info title is-5">Contact Information</p>
               <p>{this.props.address}</p>
               <p>{this.props.phone}</p>
+              {this.props.website ? <a type="button" className="button is-link is-light websiteBtnModal" href={this.props.website} > Website </a> : null}
             </section>
             <footer className="modal-card-foot">
               {/* <button onClick={this.setModalInactive} className="button">

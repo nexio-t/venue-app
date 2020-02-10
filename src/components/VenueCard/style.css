@@ -8,8 +8,17 @@ a.websiteBtn.button.is-primary {
     margin: 10px; 
 }
 
+a.button.is-link.is-light.websiteBtnModal {
+    margin-top: 10px;
+}
+
 span.button.is-link.modal-button {
     margin: 10px;
+}
+
+.contact-info {
+    margin-top: 25px;
+    margin-bottom: 15px !important;
 }
 
 .review-card {

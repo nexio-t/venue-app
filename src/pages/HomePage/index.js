@@ -133,25 +133,36 @@ class HomePage extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.userSearch}
         />
-        <VenueCard
-          address={this.state.address}
-          name={this.state.name}
-          photoReference={this.state.photoReference}
-          website={this.state.website}
-          googleMapsUrl={this.state.googleMapsUrl}
-          types={this.state.types}
-          reviews={this.state.reviews}
-          rating={this.state.rating}
-          icon={this.state.icon}
-          phone={this.state.phone}
-          userTyping={this.state.userTyping}
-          venueImg={this.state.venueImg}
-        />
-        <Map
+        <div className="columns">
+          <div className="column is-one-third">
+            <VenueCard
+            address={this.state.address}
+            name={this.state.name}
+            photoReference={this.state.photoReference}
+            website={this.state.website}
+            googleMapsUrl={this.state.googleMapsUrl}
+            types={this.state.types}
+            reviews={this.state.reviews}
+            rating={this.state.rating}
+            icon={this.state.icon}
+            phone={this.state.phone}
+            userTyping={this.state.userTyping}
+            venueImg={this.state.venueImg}
+          />
+
+          </div>
+          <div className="column is-two-thirds">
+          <Map
           latitude={this.state.locationLat}
           longitude={this.state.locationLong}
           userTyping={this.state.userTyping}
         />
+          </div>
+
+        </div>
+
+      
+       
       </Container>
     );
   }
