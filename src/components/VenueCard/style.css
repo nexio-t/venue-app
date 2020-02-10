@@ -1,10 +1,21 @@
 
-.image img {
-    display: block;
-    height: auto;
-    width: 100%;
-    /* max-height: 300px; */
-}
+
+@media only screen and (min-width: 769px) {
+    .image img {
+        display: block;
+        height: auto;
+        width: 100%;
+        max-height: 350px;
+    }
+
+    /* .venueCard {
+        max-width: 300px; 
+    } */
+
+  }
+
+
+
 
 a.websiteBtn.button.is-primary {
     margin: 10px; 

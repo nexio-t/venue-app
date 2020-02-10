@@ -45,7 +45,7 @@ class VenueCard extends Component {
 
             <div className="columns features">
               <div className="column modal-button" data-target="modal-card">
-                <div className="card is-shady">
+                <div className="venueCard card is-shady">
                   <div className="card-image ">
                     <figure className="image">
                       <img

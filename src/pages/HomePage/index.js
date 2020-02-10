@@ -137,7 +137,7 @@ class HomePage extends Component {
           value={this.state.userSearch}
         />
         <div className="columns">
-          <div className="column is-one-third">
+          <div className="column">
             <VenueCard
             address={this.state.address}
             name={this.state.name}
