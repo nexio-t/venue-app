@@ -18,10 +18,6 @@ Philadelphia Museum of Art
 National Constitution Center
 ```
 
-```
-Urban Outfitters Center City 
-```
-
 #### Image 1: 
 ![venuely-desktop-picture1](./public/assets/images/venuely-phila_museum_pic1.png)
 
@@ -43,7 +39,7 @@ Urban Outfitters Center City
 <img src="./public/assets/images/venuely-mobile-3.png" width="40%">
 
 
-Check out the video demo [here](https://drive.google.com/file/d/1V9r5-r1jy3U6y0Nc3O0SJQcty6BgDKBp/view). 
+Check out the video demo [here](https://drive.google.com/file/d/1KvDa_pFXtCG0XyVVIg6Pxb8J23o-HZR4/view). 
 
 ### This project was built with...
 * HTML5
