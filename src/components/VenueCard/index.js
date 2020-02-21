@@ -25,7 +25,6 @@ class VenueCard extends Component {
   }
 
   setHoursModalActive() {
-    console.log("set hours works");
     this.setState({ hoursModalActive: true });
   }
 
@@ -38,8 +37,6 @@ class VenueCard extends Component {
       <div>
         {this.props.address ? (
           <div>
-            {/* {console.log("Props Line 19:", props)}    */}
-
             <div className="columns features">
               <div className="column modal-button" data-target="modal-card">
                 <div className="venueCard card is-shady">
@@ -65,7 +62,6 @@ class VenueCard extends Component {
                       </div>
                     </div>
                     <div className="content">
-                      {/* <p>Address: {this.props.address}</p> */}
                       <p>Average user rating: {this.props.rating}</p>
                     </div>
                   </div>
@@ -218,9 +214,7 @@ class VenueCard extends Component {
                     </a>
                   ) : null}
                 </section>
-                <footer className="modal-card-foot">
-                
-                </footer>
+                <footer className="modal-card-foot"></footer>
               </div>
             </div>
             {/* Reviews Modal End */}

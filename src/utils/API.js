@@ -1,8 +1,6 @@
 import axios from "axios";
 
 export default {
-
-    // API Call to 
   
     getVenue: function(query) {
         

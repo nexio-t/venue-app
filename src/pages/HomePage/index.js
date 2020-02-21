@@ -4,7 +4,6 @@ import Searchbox from "../../components/Searchbox";
 import Map from "../../components/Map";
 import API from "../../utils/API";
 import VenueCard from "../../components/VenueCard";
-// import { tsImportEqualsDeclaration } from "@babel/types";
 
 class HomePage extends Component {
   state = {
@@ -46,8 +45,6 @@ class HomePage extends Component {
     // Call to Google Maps Places to fetch  venue information and place id to make another call for more detailed information
     API.getVenue(this.state.userSearch)
       .then(res => {
-
-
         this.setState({
           address: "",
           name: "",
@@ -80,8 +77,6 @@ class HomePage extends Component {
           "&key=AIzaSyCPlDKSVJg9tHRPI5NLhyUO-MttxqsiTgo";
         status = res.data.status;
 
-    
-
         this.setState({
           address,
           name,
@@ -102,8 +97,6 @@ class HomePage extends Component {
   getVenueDetails = placeId => {
     API.getVenueDetails(placeId)
       .then(res => {
-    
-
         let website, googleMapsUrl, types, reviews, rating, icon, phone, hours;
 
         website = res.data.result.website;
@@ -114,8 +107,6 @@ class HomePage extends Component {
         icon = res.data.result.icon;
         phone = res.data.result.formatted_phone_number;
         hours = res.data.result.opening_hours.weekday_text;
-
-
 
         this.setState({
           website,
@@ -139,38 +130,39 @@ class HomePage extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.userSearch}
         />
-        { (this.state.name) ? (<div className="columns">
-          <div className="column">
-            <VenueCard
-              address={this.state.address}
-              name={this.state.name}
-              photoReference={this.state.photoReference}
-              website={this.state.website}
-              googleMapsUrl={this.state.googleMapsUrl}
-              hours={this.state.hours}
-              types={this.state.types}
-              reviews={this.state.reviews}
-              rating={this.state.rating}
-              icon={this.state.icon}
-              phone={this.state.phone}
-              userTyping={this.state.userTyping}
-              venueImg={this.state.venueImg}
-            />
+        {this.state.name ? (
+          <div className="columns">
+            <div className="column">
+              <VenueCard
+                address={this.state.address}
+                name={this.state.name}
+                photoReference={this.state.photoReference}
+                website={this.state.website}
+                googleMapsUrl={this.state.googleMapsUrl}
+                hours={this.state.hours}
+                types={this.state.types}
+                reviews={this.state.reviews}
+                rating={this.state.rating}
+                icon={this.state.icon}
+                phone={this.state.phone}
+                userTyping={this.state.userTyping}
+                venueImg={this.state.venueImg}
+              />
+            </div>
+            <div className="column is-two-thirds">
+              <Map
+                latitude={this.state.locationLat}
+                longitude={this.state.locationLong}
+                userTyping={this.state.userTyping}
+                address={this.state.address}
+                name={this.state.name}
+                venueImg={this.state.venueImg}
+              />
+            </div>
           </div>
-          <div className="column is-two-thirds">
-            <Map
-              latitude={this.state.locationLat}
-              longitude={this.state.locationLong}
-              userTyping={this.state.userTyping}
-              address={this.state.address}
-              name={this.state.name}
-              venueImg={this.state.venueImg}
-            />
-          </div>
-        </div>) : (<div>No search results to display</div>)}
-        
-
-
+        ) : (
+          <div>No search results to display</div>
+        )}
       </Container>
     );
   }

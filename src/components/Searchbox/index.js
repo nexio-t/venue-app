@@ -5,7 +5,6 @@ import "bulma/css/bulma.css";
 const Searchbox = props => {
   return (
     <div>
-      
       <div className="parentDiv">Venuely: Find your place</div>
       <form>
         <div className="box">
@@ -31,7 +30,6 @@ const Searchbox = props => {
             </div>
           </div>
         </div>
-       
       </form>
     </div>
   );
