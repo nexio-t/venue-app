@@ -1,7 +1,6 @@
 # Venuely 
 
 > A simple web app to find all the information for your next stop </br>
-> This app adheres to the front-end technical track 
 
 **Problem**: Sometimes we just want a quick, centralized snapshot of a venue's location, hours, reviews, and contact information, rather than being bombarded with a dozen different links leading to different webpages or having to pull up Google Maps to visualize a venue's location.  
 
@@ -70,7 +69,6 @@ Check out the video demo [here](https://drive.google.com/file/d/1KvDa_pFXtCG0XyV
 ### Areas for further development
 
 Next steps and a few areas of further development include: 
-* Hide API keys with environment variables 
 * Displaying an interactive carousel of images using the Google Place Photos API
 * Recommending related venues based on user search 
 * Incorporating redirects to user profiles from reviewers  
