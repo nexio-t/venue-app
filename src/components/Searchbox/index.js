@@ -15,7 +15,7 @@ const Searchbox = props => {
                 value={props.value}
                 type="text"
                 name="userSearch"
-                placeholder="Philadelphia Museum of Art"
+                placeholder="Philadelphia Navy Yard"
                 onChange={props.handleInputChange}
               />
             </div>

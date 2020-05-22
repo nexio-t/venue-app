@@ -3,22 +3,35 @@ import "./style.css";
 import "bulma/css/bulma.css";
 
 class Map extends Component {
+
+
   componentDidUpdate() {
+
+    console.log("this.props map: ", this.props); 
     if (!this.props.userTyping) {
       this.renderMap();
     }
+
   }
+
 
   // Function to render map
   renderMap = () => {
+    console.log("renderMap called"); 
     loadScript(
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyAqMhysRXqdWYWpzfxHxkxe3_SqVP-UnIo&callback=initMap"
     );
+
     window.initMap = this.initMap;
+    
+  
+
   };
 
   // Function to center map on user search, create map marker, and create marker info window
   initMap = () => {
+
+    console.log("initMap called"); 
     var map = new window.google.maps.Map(document.getElementById("map"), {
       center: { lat: this.props.latitude, lng: this.props.longitude },
       zoom: 16
@@ -37,6 +50,13 @@ class Map extends Component {
       icon: "https://img.icons8.com/dusk/64/000000/marker.png",
       map: map
     });
+
+    
+
+    // console.log("marker is: ", marker.internalPosition.lat);
+    // console.log(marker.internalPosition.lat); 
+
+    console.log("marker is: ", marker); 
 
     // Adds click event listener to marker 
     window.google.maps.event.addListener(
@@ -57,12 +77,17 @@ class Map extends Component {
         };
       })(marker, i)
     );
+      this.loaded(); 
   };
+
+  loaded = () => {
+    console.log("loaded"); 
+  }
 
   render() {
     return (
       <div>
-        <div id="map"></div>
+  {(this.props) ? (<div id="map"></div>) : <div>"Sorry, no map"</div>}
       </div>
     );
   }

@@ -62,7 +62,7 @@ class VenueCard extends Component {
                       </div>
                     </div>
                     <div className="content">
-                      <p>Average user rating: {this.props.rating}</p>
+                      <p>Average user rating: {this.props.rating ? (this.props.rating) : "N/A"}</p>
                     </div>
                   </div>
                   <footer className="card-footer">
