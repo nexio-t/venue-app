@@ -30,11 +30,11 @@ Another option, of course, would have been to use CSS Grid and Flexbox (in combi
 If you'd like to try Venuely yourself, visit the live verison here(). Choose a specific place, whether restaurant, museum, landmark, park, or store, and enter it into the search bar. Here are a few good ones to start off: 
 
 ```
-Philadelphia Museum of Art
+Philadelphia Navy Yard
 ```
 
 ```
-National Constitution Center
+New York City
 ```
 
 #### Image 1: 
