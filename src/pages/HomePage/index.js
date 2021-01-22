@@ -31,7 +31,6 @@ class HomePage extends Component {
     let value = event.target.value;
     let name = event.target.name;
 
-    // Updating the input field's state
     this.setState({
       [name]: value,
       userTyping: true
@@ -42,11 +41,8 @@ class HomePage extends Component {
     event.preventDefault();
     this.setState({ userTyping: false });
 
-    // Call to Google Maps Places to fetch  venue information and place id to make another call for more detailed information
     API.getVenue(this.state.userSearch)
       .then(res => {
-
-        console.log("res is: ", res); 
 
         this.setState({
           address: "",
@@ -100,8 +96,6 @@ class HomePage extends Component {
   getVenueDetails = placeId => {
     API.getVenueDetails(placeId)
       .then(res => {
-
-        console.log("res2 is: ", res); 
         let website, googleMapsUrl, types, reviews, rating, icon, phone, hours;
 
         website = res.data.result.website;
@@ -112,8 +106,6 @@ class HomePage extends Component {
         icon = res.data.result.icon;
         phone = res.data.result.formatted_phone_number;
         // hours = res.data.result.opening_hours.weekday_text;
-
-        console.log("hours is: ", hours); 
 
         this.setState({
           website,
@@ -136,7 +128,6 @@ class HomePage extends Component {
           handleInputChange={this.handleInputChange}
           value={this.state.userSearch}
         />
-        {console.log("this.state.userTyping ORIGINAL : ", this.state.userTyping)}
         {this.state.name ? (
           <div className="columns">
             <div className="column">

@@ -6,8 +6,6 @@ class Map extends Component {
 
 
   componentDidUpdate() {
-
-    console.log("this.props map: ", this.props); 
     if (!this.props.userTyping) {
       this.renderMap();
     }
@@ -17,7 +15,6 @@ class Map extends Component {
 
   // Function to render map
   renderMap = () => {
-    console.log("renderMap called"); 
     loadScript(
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyAqMhysRXqdWYWpzfxHxkxe3_SqVP-UnIo&callback=initMap"
     );
