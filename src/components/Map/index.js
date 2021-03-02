@@ -28,7 +28,6 @@ class Map extends Component {
   // Function to center map on user search, create map marker, and create marker info window
   initMap = () => {
 
-    console.log("initMap called"); 
     var map = new window.google.maps.Map(document.getElementById("map"), {
       center: { lat: this.props.latitude, lng: this.props.longitude },
       zoom: 16
@@ -47,13 +46,6 @@ class Map extends Component {
       icon: "https://img.icons8.com/dusk/64/000000/marker.png",
       map: map
     });
-
-    
-
-    // console.log("marker is: ", marker.internalPosition.lat);
-    // console.log(marker.internalPosition.lat); 
-
-    console.log("marker is: ", marker); 
 
     // Adds click event listener to marker 
     window.google.maps.event.addListener(
