@@ -61,5 +61,5 @@ Check out the video demo [here](https://drive.google.com/file/d/1KvDa_pFXtCG0XyV
 
 ## Author
 
-**Tomas Gear:** [Github](https://github.com/nexio-t) | [Portfolio](http://www.tomas-gear.com)
+**Tomas Gear:** [Github](https://github.com/nexio-t)
 
